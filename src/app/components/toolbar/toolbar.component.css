@@ -1,0 +1,60 @@
+.toolbar_container {
+    background-color: var(--green);
+    color: var(--black);
+    padding: 0.5rem;
+    letter-spacing: 0.06rem;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.toolbar_content {
+    display: grid;
+    align-content: center;
+    padding-right: 3rem;
+}
+
+:host ::ng-deep  ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    column-gap: 0.7rem;
+}
+
+:host ::ng-deep ul li {
+    display: block;
+    padding-bottom: 0.3em;
+    margin-right: 0.3rem;
+    transition: font-weight 2s ease-in;
+}
+
+:host ::ng-deep ul li:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    .toolbar_container{
+        grid-auto-flow: row;
+    }
+
+   .toolbar_content {
+        align-content: start;
+   }
+
+   :host ::ng-deep ul {
+    justify-content: start;
+   }
+
+}
+
+@media screen and (max-width: 450px) {
+    .toolbar_content {
+        align-content: center;
+    }
+
+    :host ::ng-deep ul {
+        grid-auto-flow: row;
+        justify-content: center;
+    }
+    
+}
